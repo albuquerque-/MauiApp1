@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Components.WebView.Maui;
 using MauiApp1.Data;
 
+using ClassLibrary1;
+
 namespace MauiApp1;
 
 public static class MauiProgram

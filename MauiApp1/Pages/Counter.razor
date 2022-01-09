@@ -6,11 +6,20 @@
 
 <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
 
+<p>Using IImcCalc on a dll library: @result</p>
+  
+
 @code {
 	private int currentCount = 0;
+
+	ClassLibrary1.Class1 class1=new ClassLibrary1.Class1();
+
+	int result;
+
 
 	private void IncrementCount()
 	{
 		currentCount++;
+		result=class1.getValue10(currentCount);
 	}
 }
