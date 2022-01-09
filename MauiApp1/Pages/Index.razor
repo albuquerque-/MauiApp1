@@ -1,0 +1,24 @@
+﻿@page "/"
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<SurveyPrompt Title="How is Blazor working for you?" />
+
+<button @onclick="GetMessage">Edit</button>
+
+<p>@message</p>
+
+@code {
+    string message = "Hello!";
+
+    void GetMessage()
+    {
+        var file = Path.GetTempFileName();
+        File.WriteAllText(file, "Enter message:");
+        var p = System.Diagnostics.Process.Start("notepad", file);
+        p.WaitForExit();
+        message = File.ReadAllText(file);
+    }
+}
